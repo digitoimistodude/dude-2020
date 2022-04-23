@@ -3,7 +3,7 @@
  * @Author:             Roni Laukkarinen, Digitoimisto Dude Oy (https://dude.fi)
  * @Date:               2019-05-10 16:50:23
  * @Last Modified by:   Roni Laukkarinen
- * @Last Modified time: 2020-10-12 20:54:17
+ * @Last Modified time: 2022-04-23 10:57:24
  *
  * @package dude
  */
@@ -26,12 +26,12 @@ $reference = array(
   'image_skew' => get_field( 'image_skew', $reference_id ),
 ); ?>
 
-<section class="block block-references-one has-light-bg">
-  <div class="container">
+<section class="block block-references-one has-light-bg" style="overflow: visible;">
+  <div class="container" style="overflow: visible;">
 
-    <div class="cols cols-two">
+    <div class="cols cols-two" style="overflow: visible;">
 
-      <div class="col col-content">
+      <div class="col col-content" style="overflow: visible;">
         <p class="block-pre-title" aria-describedby="<?php echo esc_html( sanitize_title( $reference['frontpage_upsell_title'] ) ); ?>"><?php echo esc_html( $reference['upper_title'] ); ?></p>
         <h2 class="block-title" id="<?php echo esc_html( sanitize_title( $reference['frontpage_upsell_title'] ) ); ?>"><?php echo esc_html( $reference['frontpage_upsell_title'] ); ?></h2>
 
@@ -39,7 +39,20 @@ $reference = array(
           <?php echo wpautop( $reference['frontpage_upsell_desc'] ); // phpcs:ignore ?>
         </div>
 
-        <p class="button-wrapper"><a href="<?php echo esc_html( $reference['permalink'] ) ?>" class="button button-glitch button-mint">Tutustu työhön<?php include get_theme_file_path( '/svg/arrow-right.svg' ); ?></a></p>
+        <p class="button-wrapper"><a style="background: none !important; padding: 0 !important;" href="<?php echo esc_html( $reference['permalink'] ) ?>" class="button button-mint">
+
+        <svg style="overflow: visible;" class="liquid-button"
+          data-text="Tutustu työhön"
+          data-force-factor="0.1"
+          data-layer-1-viscosity="0.5"
+          data-layer-2-viscosity="0.4"
+          data-layer-1-mouse-force="400"
+          data-layer-2-mouse-force="500"
+          data-layer-1-force-limit="1"
+          data-layer-2-force-limit="2"
+        ></svg>
+
+        </a></p>
       </div>
 
       <div class="col col-reference-image col-reference-image-main">
